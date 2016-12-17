@@ -45,7 +45,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         // POST request
         
-        let newList: [String: Any] = ["name": "Test API List", "user_id" : 1]
+        let newList: [String: Any] = ["name": "Testing List", "user_id" : 1]
         Alamofire.request(todoEndpoint, method: .post, parameters: ["list": newList], encoding: JSONEncoding.default)
             .responseJSON { response in
                 
