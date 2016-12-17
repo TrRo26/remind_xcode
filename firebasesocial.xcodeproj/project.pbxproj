@@ -48,6 +48,7 @@
 		095F06A91E04DE9F008989A7 /* firebasesocialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firebasesocialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		095F06AD1E04DE9F008989A7 /* firebasesocialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebasesocialUITests.swift; sourceTree = "<group>"; };
 		095F06AF1E04DE9F008989A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		095F06BB1E056A39008989A7 /* firebasesocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firebasesocial.entitlements; sourceTree = "<group>"; };
 		6D7D645C793A5D6A70C5A446 /* Pods-firebasesocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.release.xcconfig"; sourceTree = "<group>"; };
 		7142597E2D46E49EB094B925 /* Pods-firebasesocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebasesocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +105,7 @@
 		095F068C1E04DE9F008989A7 /* firebasesocial */ = {
 			isa = PBXGroup;
 			children = (
+				095F06BB1E056A39008989A7 /* firebasesocial.entitlements */,
 				095F068D1E04DE9F008989A7 /* AppDelegate.swift */,
 				095F068F1E04DE9F008989A7 /* ViewController.swift */,
 				095F06911E04DE9F008989A7 /* Main.storyboard */,
@@ -220,7 +222,13 @@
 				TargetAttributes = {
 					095F06891E04DE9F008989A7 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = CQWJ8RL9Y5;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					095F069D1E04DE9F008989A7 = {
 						CreatedOnToolsVersion = 8.2;
@@ -488,9 +496,11 @@
 			baseConfigurationReference = 7142597E2D46E49EB094B925 /* Pods-firebasesocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CQWJ8RL9Y5;
 				INFOPLIST_FILE = firebasesocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = avb.firebasesocial;
+				PRODUCT_BUNDLE_IDENTIFIER = andrewvanbeek.firebasesocial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -501,9 +511,11 @@
 			baseConfigurationReference = 6D7D645C793A5D6A70C5A446 /* Pods-firebasesocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CQWJ8RL9Y5;
 				INFOPLIST_FILE = firebasesocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = avb.firebasesocial;
+				PRODUCT_BUNDLE_IDENTIFIER = andrewvanbeek.firebasesocial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -582,6 +594,7 @@
 				095F06B41E04DE9F008989A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		095F06B51E04DE9F008989A7 /* Build configuration list for PBXNativeTarget "firebasesocialTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +603,7 @@
 				095F06B71E04DE9F008989A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		095F06B81E04DE9F008989A7 /* Build configuration list for PBXNativeTarget "firebasesocialUITests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +612,7 @@
 				095F06BA1E04DE9F008989A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
