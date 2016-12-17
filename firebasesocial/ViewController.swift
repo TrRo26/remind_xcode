@@ -38,7 +38,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     return
                 }
                 print(json)
-                
         }
  
          */
