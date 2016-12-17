@@ -222,7 +222,8 @@
 				TargetAttributes = {
 					095F06891E04DE9F008989A7 = {
 						CreatedOnToolsVersion = 8.2;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = CQWJ8RL9Y5;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -496,7 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CQWJ8RL9Y5;
 				INFOPLIST_FILE = firebasesocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrewvanbeek.firebasesocial;
@@ -511,7 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CQWJ8RL9Y5;
 				INFOPLIST_FILE = firebasesocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrewvanbeek.firebasesocial;
