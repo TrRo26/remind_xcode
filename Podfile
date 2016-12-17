@@ -9,5 +9,6 @@ target 'firebasesocial' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+  pod 'Alamofire'
 
 end

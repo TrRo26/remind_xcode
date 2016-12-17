@@ -11,12 +11,17 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
+    @IBAction func afterlog(_sender: AnyObject){
+        performSegue(withIdentifier: "afterlog", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = FBSDKLoginButton()
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
         loginButton.delegate = self
+        loginButton.readPermissions = ["email"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,9 +38,16 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         
-        print("Successfully logged in with facebook...")
+        if((FBSDKAccessToken.current()) != nil){
+            var cool = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, id, name, first_name, last_name"]).start(completionHandler: { (connection, result, error) -> Void in print(result)})
+        }
         print(FBSDKAccessToken.current().userID)
+        print("logged_in")
+        afterlog(_sender: self)
+        
     }
+    
+  
     
 }
  
