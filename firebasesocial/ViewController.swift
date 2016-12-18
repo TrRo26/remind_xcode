@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  firebasesocial
-//
-//  Created by Apprentice on 12/16/16.
-//  Copyright © 2016 Apprentice. All rights reserved.
-//
-
 import UIKit
 import FBSDKLoginKit
 import Alamofire
@@ -28,45 +20,44 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         let todoEndpoint: String = "http://remind-dbc.herokuapp.com/lists"
         
         /*
-        // Standard GET request and parsed JSON object can be manipulated after it comes back from server
-        Alamofire.request(todoEndpoint, method: .get)
-            .responseJSON { response in
-                // handle JSON here
-                guard let json = response.result.value as? [String: Any] else {
-                    print("Didn't get list object as JSON from API")
-                    print("Error: \(response.result.error)")
-                    return
-                }
-                print(json)
-                
-        }
- 
+         // Standard GET request and parsed JSON object can be manipulated after it comes back from server
+         Alamofire.request(todoEndpoint, method: .get)
+         .responseJSON { response in
+         // handle JSON here
+         guard let json = response.result.value as? [String: Any] else {
+         print("Didn't get list object as JSON from API")
+         print("Error: \(response.result.error)")
+         return
+         }
+         print(json)
+         }
+         
          */
         
         // POST request
         
-        let newList: [String: Any] = ["name": "Testing List", "user_id" : 1]
+        let newList: [String: Any] = ["name": "Test API List", "user_id" : 1]
         Alamofire.request(todoEndpoint, method: .post, parameters: ["list": newList], encoding: JSONEncoding.default)
             .responseJSON { response in
                 
-            guard response.result.error == nil else {
-                // got an error in getting the data, need to handle it
-                print("error calling POST on /lists")
-                print(response.result.error!)
-                return
-            }
-            // make sure we got some JSON since that's what we expect
-            guard let json = response.result.value as? [String: Any] else {
-                print("didn't get list object as JSON from API")
-                print("Error: \(response.result.error)")
-                return
-            }
-            guard let listName = json["name"] as? String else {
-                print("Could not get list name from JSON")
-                return
-            }
-            print("The title is: " + listName)
-            
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error calling POST on /lists")
+                    print(response.result.error!)
+                    return
+                }
+                // make sure we got some JSON since that's what we expect
+                guard let json = response.result.value as? [String: Any] else {
+                    print("didn't get list object as JSON from API")
+                    print("Error: \(response.result.error)")
+                    return
+                }
+                guard let listName = json["name"] as? String else {
+                    print("Could not get list name from JSON")
+                    return
+                }
+                print("The title is: " + listName)
+                
         }
     }
     
@@ -90,10 +81,33 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         print(FBSDKAccessToken.current().userID)
         print("logged_in")
         afterlog(_sender: self)
+        var userId = FBSDKAccessToken.current().userID
+        var userRoute = "http://remind-dbc.herokuapp.com/users"
+        Alamofire.request(userRoute, method: .post, parameters: ["facebook_id": userId], encoding: JSONEncoding.default)
+            .responseJSON { response in
+                
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error calling POST on /lists")
+                    print(response.result.error!)
+                    return
+                }
+                // make sure we got some JSON since that's what we expect
+                guard let json = response.result.value as? [String: Any] else {
+                    print("didn't get list object as JSON from API")
+                    print("Error: \(response.result.error)")
+                    return
+                }
+                guard let listName = json["name"] as? String else {
+                    print("Could not get list name from JSON")
+                    return
+                }
+                print("The title is: " + listName)
+                
+        }
         
     }
     
-  
+    
     
 }
- 
