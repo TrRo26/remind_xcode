@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import Alamofire
+import UserNotifications
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
@@ -18,6 +19,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+        })
         let loginButton = FBSDKLoginButton()
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
@@ -84,7 +87,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         
         if((FBSDKAccessToken.current()) != nil){
-            var cool = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, id, name, first_name, last_name"]).start(completionHandler: { (connection, result, error) -> Void in print(result)})
+         let content = UNMutableNotificationContent()
+        content.title = "User logged in"
+        content.subtitle = "You are logged in"
+        content.body = "SO loggged in"
+        content.badge = 1
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+            let request = UNNotificationRequest(identifier: "auth", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
         print(FBSDKAccessToken.current().userID)
         print("logged_in")
