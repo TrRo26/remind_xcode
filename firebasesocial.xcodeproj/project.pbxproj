@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0956B9721E063C0E003785F5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956B9711E063C0E003785F5 /* SecondViewController.swift */; };
 		095F068E1E04DE9F008989A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F068D1E04DE9F008989A7 /* AppDelegate.swift */; };
 		095F06901E04DE9F008989A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F068F1E04DE9F008989A7 /* ViewController.swift */; };
 		095F06931E04DE9F008989A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095F06911E04DE9F008989A7 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0956B9711E063C0E003785F5 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		095F068A1E04DE9F008989A7 /* firebasesocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebasesocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		095F068D1E04DE9F008989A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		095F068F1E04DE9F008989A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				095F068D1E04DE9F008989A7 /* AppDelegate.swift */,
 				095F068F1E04DE9F008989A7 /* ViewController.swift */,
 				095F06911E04DE9F008989A7 /* Main.storyboard */,
+				0956B9711E063C0E003785F5 /* SecondViewController.swift */,
 				095F06941E04DE9F008989A7 /* Assets.xcassets */,
 				095F06961E04DE9F008989A7 /* LaunchScreen.storyboard */,
 				095F06991E04DE9F008989A7 /* Info.plist */,
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0956B9721E063C0E003785F5 /* SecondViewController.swift in Sources */,
 				095F06901E04DE9F008989A7 /* ViewController.swift in Sources */,
 				095F068E1E04DE9F008989A7 /* AppDelegate.swift in Sources */,
 			);

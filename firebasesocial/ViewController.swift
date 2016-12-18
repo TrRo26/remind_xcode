@@ -89,7 +89,31 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         print(FBSDKAccessToken.current().userID)
         print("logged_in")
         afterlog(_sender: self)
-        
+        var userId = FBSDKAccessToken.current().userID
+        var userRoute = "http://remind-dbc.herokuapp.com/users"
+        Alamofire.request(userRoute, method: .post, parameters: ["facebook_id": userId], encoding: JSONEncoding.default)
+            .responseJSON { response in
+                
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error calling POST on /lists")
+                    print(response.result.error!)
+                    return
+                }
+                // make sure we got some JSON since that's what we expect
+                guard let json = response.result.value as? [String: Any] else {
+                    print("didn't get list object as JSON from API")
+                    print("Error: \(response.result.error)")
+                    return
+                }
+                guard let listName = json["name"] as? String else {
+                    print("Could not get list name from JSON")
+                    return
+                }
+                print("The title is: " + listName)
+                
+        }
+
     }
     
   

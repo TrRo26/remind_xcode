@@ -8,6 +8,13 @@
 
 import UIKit
 
-class SecondViewController: NSObject {
+class SecondViewController: UIViewController {
+    var name: String = ""
+    @IBOutlet weak var textFieldName: UITextField!
+    @IBOutlet weak var labelName: UILabel!
 
+    @IBAction func buttonClick(_ sender: UIButton) {
+        name = textFieldName.text!
+        labelName.text = name
+    }
 }
