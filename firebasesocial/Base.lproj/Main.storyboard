@@ -30,16 +30,16 @@
             </objects>
             <point key="canvasLocation" x="-719" y="-750"/>
         </scene>
-        <!--List Table-->
+        <!--Table View Controller-->
         <scene sceneID="xO4-dC-uVa">
             <objects>
-                <tableViewController id="i8p-FP-aWZ" customClass="ListTable" customModule="firebasesocial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="i8p-FP-aWZ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gIP-C0-1sz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="aA3-ty-C23">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aA3-ty-C23">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aA3-ty-C23" id="NHT-pl-OvH">
@@ -58,16 +58,16 @@
             </objects>
             <point key="canvasLocation" x="228" y="130"/>
         </scene>
-        <!--List Table-->
+        <!--Table View Controller-->
         <scene sceneID="NuT-9Q-yWk">
             <objects>
-                <tableViewController id="xPA-2b-Deh" customClass="ListTable" customModule="firebasesocial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xPA-2b-Deh" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yq0-9O-I8Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3yd-b4-upq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3yd-b4-upq">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3yd-b4-upq" id="sLZ-DK-L62">
@@ -86,23 +86,22 @@
             </objects>
             <point key="canvasLocation" x="-511" y="130"/>
         </scene>
-        <!--List Table-->
+        <!--Table View Controller-->
         <scene sceneID="8le-kZ-FNE">
             <objects>
-                <tableViewController id="qJP-WT-7y5" customClass="ListTable" customModule="firebasesocial" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qJP-WT-7y5" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="neV-ZA-aZN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="n37-Pz-1Fa">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="n37-Pz-1Fa">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n37-Pz-1Fa" id="uwY-T2-PVe">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <gestureRecognizers/>
                             </tableViewCell>
                         </prototypes>
                         <connections>

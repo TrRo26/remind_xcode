@@ -14,7 +14,6 @@
 		095F06981E04DE9F008989A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095F06961E04DE9F008989A7 /* LaunchScreen.storyboard */; };
 		095F06A31E04DE9F008989A7 /* firebasesocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F06A21E04DE9F008989A7 /* firebasesocialTests.swift */; };
 		095F06AE1E04DE9F008989A7 /* firebasesocialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F06AD1E04DE9F008989A7 /* firebasesocialUITests.swift */; };
-		096D2D671E06F84D00C9AEB0 /* ListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D2D661E06F84D00C9AEB0 /* ListTable.swift */; };
 		42340DA2876A36C917ABFD87 /* Pods_firebasesocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		095F06AD1E04DE9F008989A7 /* firebasesocialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebasesocialUITests.swift; sourceTree = "<group>"; };
 		095F06AF1E04DE9F008989A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		095F06BB1E056A39008989A7 /* firebasesocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firebasesocial.entitlements; sourceTree = "<group>"; };
-		096D2D661E06F84D00C9AEB0 /* ListTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTable.swift; sourceTree = "<group>"; };
 		6D7D645C793A5D6A70C5A446 /* Pods-firebasesocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.release.xcconfig"; sourceTree = "<group>"; };
 		7142597E2D46E49EB094B925 /* Pods-firebasesocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebasesocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +109,6 @@
 				095F068D1E04DE9F008989A7 /* AppDelegate.swift */,
 				095F068F1E04DE9F008989A7 /* ViewController.swift */,
 				095F06911E04DE9F008989A7 /* Main.storyboard */,
-				096D2D661E06F84D00C9AEB0 /* ListTable.swift */,
 				095F06941E04DE9F008989A7 /* Assets.xcassets */,
 				095F06961E04DE9F008989A7 /* LaunchScreen.storyboard */,
 				095F06991E04DE9F008989A7 /* Info.plist */,
@@ -345,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096D2D671E06F84D00C9AEB0 /* ListTable.swift in Sources */,
 				095F06901E04DE9F008989A7 /* ViewController.swift in Sources */,
 				095F068E1E04DE9F008989A7 /* AppDelegate.swift in Sources */,
 			);
