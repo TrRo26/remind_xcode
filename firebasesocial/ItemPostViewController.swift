@@ -57,22 +57,13 @@ class ItemPostViewController: UIViewController, CLLocationManagerDelegate, UITex
     }
     
     var locationManager: CLLocationManager = CLLocationManager()
-    var locationEndpoint = "http://remind-dbc.herokuapp.com/maps"
+  
     
-    /*
+    
      // Standard GET request and parsed JSON object can be manipulated after it comes back from server
-     Alamofire.request(todoEndpoint, method: .get)
-     .responseJSON { response in
-     // handle JSON here
-     guard let json = response.result.value as? [String: Any] else {
-     print("Didn't get list object as JSON from API")
-     print("Error: \(response.result.error)")
-     return
-     }
-     print(json)
-     }
+
      
-     */
+ 
     
     
 
@@ -90,6 +81,15 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
     longitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.longitude)
     
     //        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
+    var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=41.8762&location[longitude]=-87.6531"
+    let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
+    Alamofire.request(todoEndpoint, method: .get)
+        .responseJSON { response in
+            // handle JSON here
+            let json : NSArray? = response.result.value as! NSArray?
+            print("hey")
+            print(json)
+    }
 }
 
 
