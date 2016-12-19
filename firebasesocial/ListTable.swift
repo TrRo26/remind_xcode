@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class ListTable: UITableViewController {
-    var tableItems = ["a", "b", "c"]
+    var table = ["a", "b", "c"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,8 @@ class ListTable: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -34,18 +38,30 @@ class ListTable: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (tableItems.count)
+        return (table.count)
     }
 
-
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let todoEndpoint: String = "http://remind-dbc.herokuapp.com/lists"
+         // Standard GET request and parsed JSON object can be manipulated after it comes back from server
+         Alamofire.request(todoEndpoint, method: .get)
+         .responseJSON { response in
+         // handle JSON here
+            let json : NSDictionary? = response.result.value as! NSDictionary?
+            var a = (json as? [String : String])?["name"]
+//            var b = String(describing: type(of: a))
+            print(a)
 
-        cell.textLabel?.text = tableItems[indexPath.row]
+         }
         
+     
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = table[indexPath.row]
         return cell
     }
- 
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -59,10 +75,10 @@ class ListTable: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-             Delete the row from the data source
+            // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-             Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     */
