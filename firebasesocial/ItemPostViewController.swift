@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import CoreLocation
+import UserNotifications
 
 class ItemPostViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     var name = ""
@@ -89,6 +90,18 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
             let json : NSArray? = response.result.value as! NSArray?
             print("hey")
             print(json)
+            if((json?.count)! >= 0){
+                let content = UNMutableNotificationContent()
+                content.title = "Hey do that thing"
+                content.subtitle = "it was on your list"
+                content.body = "do it"
+                content.badge = 1
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+                let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                
+            }
+
     }
 }
 
