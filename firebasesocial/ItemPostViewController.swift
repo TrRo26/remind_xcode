@@ -90,7 +90,7 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
             let json : NSArray? = response.result.value as! NSArray?
             print("hey")
             print(json)
-            if((json?.count)! >= 0){
+            if((json?.count)! >= 1){
                 let content = UNMutableNotificationContent()
                 content.title = "Hey do that thing"
                 content.subtitle = "it was on your list"
