@@ -12,6 +12,7 @@ import Alamofire
 class ListTable: UITableViewController {
     var table = ["a", "b", "c"]
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
