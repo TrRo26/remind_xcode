@@ -8,10 +8,10 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
-class ItemPostViewController: UIViewController {
+class ItemPostViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     var name = ""
-    
     
     @IBOutlet weak var textFieldName: UITextField!
     
@@ -44,11 +44,65 @@ class ItemPostViewController: UIViewController {
         }
 
     }
+
+////////////////////////////////////////////////////////
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    var locationEndpoint = "http://remind-dbc.herokuapp.com/maps"
+    
+    /*
+     // Standard GET request and parsed JSON object can be manipulated after it comes back from server
+     Alamofire.request(todoEndpoint, method: .get)
+     .responseJSON { response in
+     // handle JSON here
+     guard let json = response.result.value as? [String: Any] else {
+     print("Didn't get list object as JSON from API")
+     print("Error: \(response.result.error)")
+     return
+     }
+     print(json)
+     }
+     
+     */
+    
+    
+
+
+
+
+
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    let lastLocation: CLLocation = locations[locations.count - 1]
+    
+    //        var userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
+    //        var userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
+    
+    latitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.latitude)
+    longitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.longitude)
+    
+    //        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
+}
+
+
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+
+
+
+
+
+
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,5 +119,7 @@ class ItemPostViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
