@@ -81,7 +81,7 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
     longitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.longitude)
     
     //        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
-    var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=41.8762&location[longitude]=-87.6531"
+    var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=\(String(format: "%.6f", lastLocation.coordinate.latitude))&location[longitude]=\(String(format: "%.6f", lastLocation.coordinate.longitude))"
     let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
     Alamofire.request(todoEndpoint, method: .get)
         .responseJSON { response in
