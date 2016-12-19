@@ -11,20 +11,27 @@ import FBSDKLoginKit
 import Alamofire
 import UserNotifications
 import CoreLocation
+import MapKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
+   
     
     @IBAction func afterlog(_sender: AnyObject){
         performSegue(withIdentifier: "afterlog", sender: self)
     }
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // map stuff
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
         })
         let loginButton = FBSDKLoginButton()
         view.addSubview(loginButton)
-        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        loginButton.frame = CGRect(x: 16, y: 500, width: view.frame.width - 32, height: 50)
         loginButton.delegate = self
     
         
