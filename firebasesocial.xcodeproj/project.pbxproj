@@ -16,6 +16,7 @@
 		095F06AE1E04DE9F008989A7 /* firebasesocialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F06AD1E04DE9F008989A7 /* firebasesocialUITests.swift */; };
 		096D2D691E07230600C9AEB0 /* ListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D2D681E07230600C9AEB0 /* ListTable.swift */; };
 		096D2D6B1E07328A00C9AEB0 /* ItemPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D2D6A1E07328A00C9AEB0 /* ItemPostViewController.swift */; };
+		096D2D6D1E07938A00C9AEB0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D2D6C1E07938A00C9AEB0 /* CoreLocation.framework */; };
 		42340DA2876A36C917ABFD87 /* Pods_firebasesocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		095F06BB1E056A39008989A7 /* firebasesocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firebasesocial.entitlements; sourceTree = "<group>"; };
 		096D2D681E07230600C9AEB0 /* ListTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTable.swift; sourceTree = "<group>"; };
 		096D2D6A1E07328A00C9AEB0 /* ItemPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPostViewController.swift; sourceTree = "<group>"; };
+		096D2D6C1E07938A00C9AEB0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6D7D645C793A5D6A70C5A446 /* Pods-firebasesocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.release.xcconfig"; sourceTree = "<group>"; };
 		7142597E2D46E49EB094B925 /* Pods-firebasesocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebasesocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096D2D6D1E07938A00C9AEB0 /* CoreLocation.framework in Frameworks */,
 				42340DA2876A36C917ABFD87 /* Pods_firebasesocial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +155,7 @@
 		BE09FCBE7C726F3934422641 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				096D2D6C1E07938A00C9AEB0 /* CoreLocation.framework */,
 				AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */,
 			);
 			name = Frameworks;
@@ -166,8 +170,8 @@
 			buildPhases = (
 				0DC16C313A133FA2544E2D4A /* [CP] Check Pods Manifest.lock */,
 				095F06861E04DE9F008989A7 /* Sources */,
-				095F06871E04DE9F008989A7 /* Frameworks */,
 				095F06881E04DE9F008989A7 /* Resources */,
+				095F06871E04DE9F008989A7 /* Frameworks */,
 				9EC232843B98000C70ED06CE /* [CP] Embed Pods Frameworks */,
 				5209E4B83DE46B2BB534F4E5 /* [CP] Copy Pods Resources */,
 			);
