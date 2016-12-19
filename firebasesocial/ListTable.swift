@@ -26,6 +26,8 @@ class ListTable: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -41,18 +43,17 @@ class ListTable: UITableViewController {
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let todoEndpoint: String = "http://remind-dbc.herokuapp.com/lists"
-//         // Standard GET request and parsed JSON object can be manipulated after it comes back from server
-//         Alamofire.request(todoEndpoint, method: .get)
-//         .responseJSON { response in
-//         // handle JSON here
-//         guard let json = response.result.value as? AnyObject else {
-//         print("Didn't get list object as JSON from API")
-//         print("Error: \(response.result.error)")
-//         return
-//         }
-//
-//         }
+        let todoEndpoint: String = "http://remind-dbc.herokuapp.com/lists"
+         // Standard GET request and parsed JSON object can be manipulated after it comes back from server
+         Alamofire.request(todoEndpoint, method: .get)
+         .responseJSON { response in
+         // handle JSON here
+            let json : NSDictionary? = response.result.value as! NSDictionary?
+            var a = (json as? [String : String])?["name"]
+//            var b = String(describing: type(of: a))
+            print(a)
+
+         }
         
      
 
