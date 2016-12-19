@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		091EDF041E085D85000C7ECA /* remindlogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 091EDF031E085D85000C7ECA /* remindlogin.png */; };
+		091EDF061E08764F000C7ECA /* remindlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 091EDF051E08764F000C7ECA /* remindlogo.png */; };
 		095F068E1E04DE9F008989A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F068D1E04DE9F008989A7 /* AppDelegate.swift */; };
 		095F06901E04DE9F008989A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F068F1E04DE9F008989A7 /* ViewController.swift */; };
 		095F06931E04DE9F008989A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095F06911E04DE9F008989A7 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		091EDF031E085D85000C7ECA /* remindlogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remindlogin.png; path = ../../Downloads/remindlogin.png; sourceTree = "<group>"; };
+		091EDF051E08764F000C7ECA /* remindlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remindlogo.png; path = ../../Downloads/remindlogo.png; sourceTree = "<group>"; };
 		095F068A1E04DE9F008989A7 /* firebasesocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebasesocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		095F068D1E04DE9F008989A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		095F068F1E04DE9F008989A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				095F06911E04DE9F008989A7 /* Main.storyboard */,
 				096D2D6A1E07328A00C9AEB0 /* ItemPostViewController.swift */,
 				091EDF031E085D85000C7ECA /* remindlogin.png */,
+				091EDF051E08764F000C7ECA /* remindlogo.png */,
 				095F06941E04DE9F008989A7 /* Assets.xcassets */,
 				095F06961E04DE9F008989A7 /* LaunchScreen.storyboard */,
 				095F06991E04DE9F008989A7 /* Info.plist */,
@@ -282,6 +285,7 @@
 			files = (
 				095F06981E04DE9F008989A7 /* LaunchScreen.storyboard in Resources */,
 				095F06951E04DE9F008989A7 /* Assets.xcassets in Resources */,
+				091EDF061E08764F000C7ECA /* remindlogo.png in Resources */,
 				091EDF041E085D85000C7ECA /* remindlogin.png in Resources */,
 				095F06931E04DE9F008989A7 /* Main.storyboard in Resources */,
 			);

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,12 +23,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remindlogin.png" translatesAutoresizingMaskIntoConstraints="NO" id="ciY-m1-vMs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remindlogin.png" translatesAutoresizingMaskIntoConstraints="NO" id="ciY-m1-vMs">
+                                <rect key="frame" x="-89" y="-82" width="540" height="810"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remindlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kaJ-pw-0Mo">
+                                <rect key="frame" x="28" y="216" width="306" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="eBH-MB-x5O"/>
+                                    <constraint firstAttribute="width" constant="306" id="pS9-0D-d6h"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kaJ-pw-0Mo" firstAttribute="centerX" secondItem="ciY-m1-vMs" secondAttribute="centerX" id="ICl-Kd-mo2"/>
+                            <constraint firstItem="kaJ-pw-0Mo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="MJf-D6-Zgy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kaJ-pw-0Mo" secondAttribute="bottom" constant="237" id="Xoy-Wt-vdc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kaJ-pw-0Mo" secondAttribute="trailing" constant="25" id="Y9m-Vh-bKC"/>
+                            <constraint firstItem="kaJ-pw-0Mo" firstAttribute="centerY" secondItem="ciY-m1-vMs" secondAttribute="centerY" id="bYm-wN-0tM"/>
+                            <constraint firstItem="kaJ-pw-0Mo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="196" id="eMi-Uh-ixO"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="xPA-2b-Deh" kind="show" identifier="afterlog" id="ggN-SD-9zL"/>
@@ -50,7 +65,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3yd-b4-upq" id="sLZ-DK-L62">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -219,5 +234,6 @@
     </scenes>
     <resources>
         <image name="remindlogin.png" width="540" height="810"/>
+        <image name="remindlogo.png" width="500" height="500"/>
     </resources>
 </document>
