@@ -87,7 +87,7 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
     Alamofire.request(todoEndpoint, method: .get)
         .responseJSON { response in
             // handle JSON here
-            let json : NSArray? = response.result.value as! NSArray?
+            let json : NSDictionary? = response.result.value as! NSDictionary?
             print("hey")
             print(json)
             if((json?.count)! >= 1){
