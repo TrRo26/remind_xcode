@@ -8,26 +8,73 @@
 
 import UIKit
 import Alamofire
+import CoreMotion
 
 class ListTable: UITableViewController {
     var table = ["a", "b", "c"]
-    
+    var currentAcceleration: Double = 0.0
+    var motionManager = CMMotionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        motionManager.accelerometerUpdateInterval = 1
+        
+        motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
+            (data, error) in
+            self.outputAccelerationData(acceleration: (data?.acceleration)!)
+        }
     }
+    
+    func outputAccelerationData(acceleration: CMAcceleration) {
+        print(acceleration)
+    }
+    
+    
+//        motionManager.startAccelerometerUpdates(to: OperationQueue.current, withHandler: CMAccelerometerData)
+        
+//            self.outputAccelerationData(CMAccelerometerData.acceleration)
+//        if (error != nil) {
+//            print("\(error")
+//        }
+        
+    
+
+
+
+
+
+//@property(readonly, nullable) CMAccelerometerData *accelerometerData __TVOS_PROHIBITED;
+/*
+ *  startAccelerometerUpdates
+ *
+ *		Starts accelerometer updates with no handler. To receive the latest accelerometer data
+ *			when desired, examine the accelerometerData property.
+ */
+//- (void)startAccelerometerUpdates __TVOS_PROHIBITED;
+/*
+ *  startAccelerometerUpdatesToQueue:withHandler:
+ *
+ *		Starts accelerometer updates, providing data to the given handler through the given queue.
+ *			Note that when the updates are stopped, all operations in the
+ *			given NSOperationQueue will be cancelled.
+ */
+//- (void)startAccelerometerUpdatesToQueue:(NSOperationQueue *)queue withHandler:(CMAccelerometerHandler)handler __TVOS_PROHIBITED;
+/*
+ *  stopAccelerometerUpdates
+ *
+ *			Stop accelerometer updates.
+ */
+//- (void)stopAccelerometerUpdates __TVOS_PROHIBITED;
+
+
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 
     // MARK: - Table view data source
@@ -63,6 +110,7 @@ class ListTable: UITableViewController {
         return cell
     }
 
+}
 
     /*
     // Override to support conditional editing of the table view.
@@ -109,4 +157,3 @@ class ListTable: UITableViewController {
     }
     */
 
-}
