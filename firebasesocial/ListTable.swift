@@ -9,13 +9,30 @@
 import UIKit
 import Alamofire
 
+
+
+
+
+
+
 class ListTable: UITableViewController {
-var table = ["a", "b", "c"]
+    var table = ["a"]
     
+    func siteInfo() -> Void {
+        Alamofire.request("http://remind-dbc.herokuapp.com/items").responseJSON {
+            response in
+            let json = response.result.value as! NSDictionary
+            self.table = (json["items"] as! NSArray) as! [String]
+            self.tableView.reloadData()
+ 
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        siteInfo()
+        print(table)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
