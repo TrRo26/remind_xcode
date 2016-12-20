@@ -65,20 +65,6 @@ class ListTable: UITableViewController {
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let todoEndpoint: String = "http://remind-dbc.herokuapp.com/lists"
-         // Standard GET request and parsed JSON object can be manipulated after it comes back from server
-         Alamofire.request(todoEndpoint, method: .get)
-         .responseJSON { response in
-         // handle JSON here
-            let json : NSDictionary? = response.result.value as! NSDictionary?
-            var a = (json as? [String : String])?["name"]
-//            var b = String(describing: type(of: a))
-            print(a)
-
-         }
-        
-     
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = table[indexPath.row]
         return cell
@@ -88,8 +74,17 @@ class ListTable: UITableViewController {
     {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
+            var deletion = table[indexPath.row]
+            var itemInfo = ["list_id": 1, "name": deletion] as [String : Any]
+            Alamofire.request("https://remind-dbc.herokuapp.com/items/1", method: .delete, parameters: ["item": itemInfo], encoding: JSONEncoding.default)
+                .responseJSON { response in
+                    
+                    
+            }
+
             table.remove(at: indexPath.row)
             tableView.reloadData()
+            
         }
     }
 
