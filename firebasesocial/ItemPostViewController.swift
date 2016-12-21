@@ -48,16 +48,16 @@ class ItemPostViewController: UIViewController, CLLocationManagerDelegate, UITex
 
 ////////////////////////////////////////////////////////
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    var locationManager: CLLocationManager = CLLocationManager()
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.delegate = self
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
+//    }
+//    
+//    var locationManager: CLLocationManager = CLLocationManager()
   
     
     
@@ -72,38 +72,38 @@ class ItemPostViewController: UIViewController, CLLocationManagerDelegate, UITex
 
 
 
-func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let lastLocation: CLLocation = locations[locations.count - 1]
-    
-    //        var userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
-    //        var userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
-    
-    latitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.latitude)
-    longitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.longitude)
-    
-    //        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
-    var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=\(String(format: "%.6f", lastLocation.coordinate.latitude))&location[longitude]=\(String(format: "%.6f", lastLocation.coordinate.longitude))"
-    let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
-    Alamofire.request(todoEndpoint, method: .get)
-        .responseJSON { response in
-            // handle JSON here
-            let json : NSDictionary? = response.result.value as! NSDictionary?
-            print("hey")
-            print(json)
-            if((json?.count)! >= 1){
-                let content = UNMutableNotificationContent()
-                content.title = "Hey do that thing"
-                content.subtitle = "it was on your list"
-                content.body = "do it"
-                content.badge = 1
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-                let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-                
-            }
-
-    }
-}
+//func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//    let lastLocation: CLLocation = locations[locations.count - 1]
+//    
+//    //        var userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
+//    //        var userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
+//    
+//    latitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.latitude)
+//    longitudeLabel.text = String(format: "%.6f", lastLocation.coordinate.longitude)
+//    
+//    //        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
+//    var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=\(String(format: "%.6f", lastLocation.coordinate.latitude))&location[longitude]=\(String(format: "%.6f", lastLocation.coordinate.longitude))"
+//    let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
+//    Alamofire.request(todoEndpoint, method: .get)
+//        .responseJSON { response in
+//            // handle JSON here
+//            let json : NSDictionary? = response.result.value as! NSDictionary?
+//            print("hey")
+//            print(json)
+//            if((json?.count)! >= 1){
+//                let content = UNMutableNotificationContent()
+//                content.title = "Hey do that thing"
+//                content.subtitle = "it was on your list"
+//                content.body = "do it"
+//                content.badge = 1
+//                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+//                let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
+//                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+//                
+//            }
+//
+//    }
+//}
 
 
     @IBOutlet weak var latitudeLabel: UILabel!
