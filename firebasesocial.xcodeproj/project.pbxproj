@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090864A01E0760FF002960FF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908649E1E0760FF002960FF /* ListView.swift */; };
+		090864A11E0760FF002960FF /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0908649F1E0760FF002960FF /* ListView.xib */; };
 		095F068E1E04DE9F008989A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F068D1E04DE9F008989A7 /* AppDelegate.swift */; };
 		095F06901E04DE9F008989A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095F068F1E04DE9F008989A7 /* ViewController.swift */; };
 		095F06931E04DE9F008989A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095F06911E04DE9F008989A7 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0908649E1E0760FF002960FF /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		0908649F1E0760FF002960FF /* ListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListView.xib; sourceTree = "<group>"; };
 		095F068A1E04DE9F008989A7 /* firebasesocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebasesocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		095F068D1E04DE9F008989A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		095F068F1E04DE9F008989A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				095F068D1E04DE9F008989A7 /* AppDelegate.swift */,
 				095F068F1E04DE9F008989A7 /* ViewController.swift */,
 				095F06911E04DE9F008989A7 /* Main.storyboard */,
+				0908649E1E0760FF002960FF /* ListView.swift */,
+				0908649F1E0760FF002960FF /* ListView.xib */,
 				096D2D661E06F84D00C9AEB0 /* ListTable.swift */,
 				095F06941E04DE9F008989A7 /* Assets.xcassets */,
 				095F06961E04DE9F008989A7 /* LaunchScreen.storyboard */,
@@ -270,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090864A11E0760FF002960FF /* ListView.xib in Resources */,
 				095F06981E04DE9F008989A7 /* LaunchScreen.storyboard in Resources */,
 				095F06951E04DE9F008989A7 /* Assets.xcassets in Resources */,
 				095F06931E04DE9F008989A7 /* Main.storyboard in Resources */,
@@ -345,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090864A01E0760FF002960FF /* ListView.swift in Sources */,
 				096D2D671E06F84D00C9AEB0 /* ListTable.swift in Sources */,
 				095F06901E04DE9F008989A7 /* ViewController.swift in Sources */,
 				095F068E1E04DE9F008989A7 /* AppDelegate.swift in Sources */,
