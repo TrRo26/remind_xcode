@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firebasesocial/ListTable.swift"
-            timestampString = "503958883.002414"
+            timestampString = "504033488.928041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "siteInfo()"
             landmarkType = "7">
             <Locations>
