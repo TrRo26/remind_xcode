@@ -18,6 +18,8 @@ import Alamofire
 class ListTable: UITableViewController {
     var table = ["a"]
     
+   
+    
     func siteInfo() -> Void {
         Alamofire.request("http://remind-dbc.herokuapp.com/items").responseJSON {
             response in
@@ -33,6 +35,7 @@ class ListTable: UITableViewController {
         super.viewDidLoad()
         siteInfo()
         print(table)
+        tableView.backgroundView = UIImageView(image: UIImage(named: "tableimage.png"))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -62,6 +65,7 @@ class ListTable: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return (table.count)
     }
+    
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,6 +90,10 @@ class ListTable: UITableViewController {
             tableView.reloadData()
             
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
     }
 
     /*

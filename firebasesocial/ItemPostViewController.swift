@@ -19,7 +19,7 @@ class ItemPostViewController: UIViewController, CLLocationManagerDelegate, UITex
     @IBAction func buttonClick(_ sender: UIButton) {
         print(textFieldName.text!)
         name = textFieldName.text!
-        let gotoplace: String = "http://remind-dbc.herokuapp.com/items"
+        let gotoplace: String = "https://remind-dbc.herokuapp.com/items"
         let newList: [String: Any] = ["name": name, "list_id" : 1]
         Alamofire.request(gotoplace, method: .post, parameters: ["item": newList], encoding: JSONEncoding.default)
             .responseJSON { response in

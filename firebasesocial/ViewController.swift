@@ -4,6 +4,7 @@
 //
 //  Created by Apprentice on 12/16/16.
 //  Copyright © 2016 Apprentice. All rights reserved.
+//B Roll provided by <a href="http://www.videezy.com">Videezy.com</a>
 //
 
 import UIKit
@@ -12,6 +13,7 @@ import Alamofire
 import UserNotifications
 import CoreLocation
 import MapKit
+import AVFoundation
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
