@@ -55,19 +55,22 @@ class map: UIViewController, CLLocationManagerDelegate {
                         var b = a[x] as! NSDictionary
                             for (key, value) in b{
                                 print(key)
+                                var title = key as! String
                                 var whatever = value as! NSDictionary
                                 var oop = whatever["address"]
                                 var doop = whatever["location"] as! NSDictionary
                                 var lat = doop["lat"] as! CLLocationDegrees
                                 var lng = doop["lng"] as! CLLocationDegrees
-                                var geep = whatever["items"]
+                                var geep = whatever["items"] as! NSArray
+                                var itemables = geep.componentsJoined(by: ", ") as! String
                                 print(oop)
                                 print(doop)
                                 print(geep)
                                 let myNewLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat as! CLLocationDegrees, lng as CLLocationDegrees)
                                 let anon = MKPointAnnotation()
                                 anon.coordinate = myNewLocation
-                                anon.title = "YO my little pony"
+                                anon.title = title
+                                anon.subtitle = itemables
                                 self.map.addAnnotation(anon)
 
                             
