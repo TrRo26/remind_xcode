@@ -12,16 +12,15 @@ import Alamofire
 
 
 
-
-
-
 class ListTable: UITableViewController {
     var table = ["a"]
     
     func siteInfo() -> Void {
-        Alamofire.request("http://remind-dbc.herokuapp.com/items").responseJSON {
+        Alamofire.request("https://remind-dbc.herokuapp.com/items").responseJSON {
             response in
             let json = response.result.value as! NSDictionary
+            print(json)
+            print(json["items"])
             self.table = (json["items"] as! NSArray) as! [String]
             self.tableView.reloadData()
  
