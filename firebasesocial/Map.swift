@@ -51,15 +51,12 @@ class map: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print(SendNotifications)
-        if SendNotifications == true{
-            doIT()
-        }
     }
 
     //MARK: FUNCTIONS
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0] as CLLocation
-        
+        print("yeah")
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         self.currentLocation = myLocation
@@ -119,36 +116,36 @@ class map: UIViewController, CLLocationManagerDelegate {
                 i = i + 1
         }
     }
-    func doIT() -> Void{
-    func push_notification(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let lastLocation: CLLocation = locations[locations.count - 1]
-        
-        var userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
-        var userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
-        print("geeeettssss here")
-        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
-        var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=\(String(format: "%.6f", lastLocation.coordinate.latitude))&location[longitude]=\(String(format: "%.6f", lastLocation.coordinate.longitude))"
-        let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
-        Alamofire.request(todoEndpoint, method: .get)
-            .responseJSON { response in
-                // handle JSON here
-                let json : NSDictionary? = response.result.value as! NSDictionary?
-                print("andrew it works")
-                print(json)
-                if((json?.count)! >= 1){
-                    let content = UNMutableNotificationContent()
-                    content.title = "Hey do that stuff"
-                    content.subtitle = "Check your map!!!"
-                    content.body = "do it"
-                    content.badge = 1
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-                    let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
-                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-                }
-        }
-    }
+//    func doIT() -> Void{
+//    func push_notification(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let lastLocation: CLLocation = locations[locations.count - 1]
+//        
+//        var userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
+//        var userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
+//        print("geeeettssss here")
+//        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
+//        var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=\(String(format: "%.6f", lastLocation.coordinate.latitude))&location[longitude]=\(String(format: "%.6f", lastLocation.coordinate.longitude))"
+//        let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
+//        Alamofire.request(todoEndpoint, method: .get)
+//            .responseJSON { response in
+//                // handle JSON here
+//                let json : NSDictionary? = response.result.value as! NSDictionary?
+//                print("andrew it works")
+//                print(json)
+//                if((json?.count)! >= 1){
+//                    let content = UNMutableNotificationContent()
+//                    content.title = "Hey do that stuff"
+//                    content.subtitle = "Check your map!!!"
+//                    content.body = "do it"
+//                    content.badge = 1
+//                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+//                    let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
+//                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+//                }
+//        }
+//    }
    
-    }
+//    }
     
    
     
