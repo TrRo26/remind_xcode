@@ -34,6 +34,7 @@ class map: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         if gatekeeper == false {
         print("cheeky")
         locationManager.startUpdatingLocation()
