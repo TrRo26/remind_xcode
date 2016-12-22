@@ -21,6 +21,8 @@
 		098932D31E087DBB007F0448 /* remindlogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 098932D21E087DBB007F0448 /* remindlogin.png */; };
 		098932D51E087E60007F0448 /* remindlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 098932D41E087E60007F0448 /* remindlogo.png */; };
 		098932D71E089494007F0448 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098932D61E089494007F0448 /* Map.swift */; };
+		098D06EB1E0B682A0035DA43 /* logoforremind.png in Resources */ = {isa = PBXBuildFile; fileRef = 098D06EA1E0B682A0035DA43 /* logoforremind.png */; };
+		098D06ED1E0B68640035DA43 /* chicago.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 098D06EC1E0B68640035DA43 /* chicago.jpg */; };
 		42340DA2876A36C917ABFD87 /* Pods_firebasesocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		098932D21E087DBB007F0448 /* remindlogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remindlogin.png; sourceTree = "<group>"; };
 		098932D41E087E60007F0448 /* remindlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remindlogo.png; sourceTree = "<group>"; };
 		098932D61E089494007F0448 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		098D06EA1E0B682A0035DA43 /* logoforremind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoforremind.png; sourceTree = "<group>"; };
+		098D06EC1E0B68640035DA43 /* chicago.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicago.jpg; sourceTree = "<group>"; };
 		6D7D645C793A5D6A70C5A446 /* Pods-firebasesocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.release.xcconfig"; sourceTree = "<group>"; };
 		7142597E2D46E49EB094B925 /* Pods-firebasesocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasesocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firebasesocial/Pods-firebasesocial.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7C9E28E3ACF5CDE960E253 /* Pods_firebasesocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebasesocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,8 @@
 				098932D61E089494007F0448 /* Map.swift */,
 				095F06911E04DE9F008989A7 /* Main.storyboard */,
 				0909B6931E0B1CD300318F31 /* SettingsViewController.swift */,
+				098D06EA1E0B682A0035DA43 /* logoforremind.png */,
+				098D06EC1E0B68640035DA43 /* chicago.jpg */,
 				098932D21E087DBB007F0448 /* remindlogin.png */,
 				098932D41E087E60007F0448 /* remindlogo.png */,
 				096D2D6A1E07328A00C9AEB0 /* ItemPostViewController.swift */,
@@ -292,6 +298,8 @@
 				095F06981E04DE9F008989A7 /* LaunchScreen.storyboard in Resources */,
 				095F06951E04DE9F008989A7 /* Assets.xcassets in Resources */,
 				098932D51E087E60007F0448 /* remindlogo.png in Resources */,
+				098D06EB1E0B682A0035DA43 /* logoforremind.png in Resources */,
+				098D06ED1E0B68640035DA43 /* chicago.jpg in Resources */,
 				098932D31E087DBB007F0448 /* remindlogin.png in Resources */,
 				095F06931E04DE9F008989A7 /* Main.storyboard in Resources */,
 			);
