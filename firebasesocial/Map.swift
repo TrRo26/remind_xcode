@@ -9,10 +9,12 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreMotion
 import Alamofire
 import UserNotifications
 
 class map: UIViewController, CLLocationManagerDelegate {
+
     
     //MARK: INSTANCE VARIABLES & CONSTANTS
     var i = 0
@@ -20,6 +22,7 @@ class map: UIViewController, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation = CLLocationCoordinate2D() as CLLocationCoordinate2D
+    var motionManager = CMMotionManager()
     
     //MARK: OUTLETS
     @IBOutlet weak var map: MKMapView!
@@ -31,11 +34,12 @@ class map: UIViewController, CLLocationManagerDelegate {
 //        manager.desiredAccuracy = kCLLocationAccuracyBest
 //        manager.requestWhenInUseAuthorization()
 //        manager.startUpdatingLocation()
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         if gatekeeper == false {
-        print("cheeky")
         locationManager.startUpdatingLocation()
         }
 //        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
@@ -57,6 +61,11 @@ class map: UIViewController, CLLocationManagerDelegate {
     }
 
     //MARK: FUNCTIONS
+    
+    func outputAccelerationData(acceleration: CMAcceleration) {
+        print(acceleration)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0] as CLLocation
         
@@ -69,6 +78,27 @@ class map: UIViewController, CLLocationManagerDelegate {
             self.map.showsUserLocation = true
             print("this happens once andrew")
             self.gatekeeper = true
+            
+            motionManager.accelerometerUpdateInterval = 1
+            motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
+                (data, error) in
+                self.outputAccelerationData(acceleration: (data?.acceleration)!)
+                if let speed = data {
+                    if speed.acceleration.x > 1 || speed.acceleration.x < 1 {
+                        let contento = UNMutableNotificationContent()
+                        contento.title = "Hey do that stuff andrew"
+                        contento.subtitle = "Check your map oooooo!!!"
+                        contento.body = "do it"
+                        contento.badge = 1
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+                        let request = UNNotificationRequest(identifier: "itema", content: contento, trigger: trigger)
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
+                    
+                    
+                    }
+                }
+            }
         }
         while i < 1 {
             print(i)
