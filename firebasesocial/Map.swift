@@ -10,20 +10,42 @@ import UIKit
 import MapKit
 import CoreLocation
 import Alamofire
-
+import UserNotifications
 
 class map: UIViewController, CLLocationManagerDelegate {
 
-    
+    //MARK: INSTANCE VARIABLES & CONSTANTS
     var i = 0
-    
-    @IBOutlet weak var map: MKMapView!
-    
     let manager = CLLocationManager()
+    var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation = CLLocation()
     
+    //MARK: OUTLETS
+    @IBOutlet weak var map: MKMapView!
     
+    //MARK: OVERRIDE FUNCTIONS
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+
+    //MARK: FUNCTIONS
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         
@@ -33,25 +55,20 @@ class map: UIViewController, CLLocationManagerDelegate {
         map.setRegion(region, animated: true)
         self.map.showsUserLocation = true
         currentLocation = location
-        print(location.speed)
-        
+//        print(location.speed)
 
-      
         while i < 1 {
             print(i)
                 var currentLat = location.coordinate.latitude
                 var currentLon = location.coordinate.longitude
-            let url = "http://remind-dbc.herokuapp.com/maps?location[latitude]=41.87&location[longitude]=-87.65"
+            
+            let url = "http://remind-dbc.herokuapp.com/maps?location[latitude]=\(currentLat)&location[longitude]=\(currentLon)"
                 Alamofire.request(url, method: .get)
                     .responseJSON { response in
-                        // handle JSON here
                         let json : NSDictionary? = response.result.value as! NSDictionary?
-                        print("hey")
-
                         var a = json?["locations"] as! NSArray
                         var x = 0
                         while x < a.count {
-                        print("_________")
                         var b = a[x] as! NSDictionary
                             for (key, value) in b{
                                 print(key)
@@ -63,59 +80,49 @@ class map: UIViewController, CLLocationManagerDelegate {
                                 var lng = doop["lng"] as! CLLocationDegrees
                                 var geep = whatever["items"] as! NSArray
                                 var itemables = geep.componentsJoined(by: ", ") as! String
-                                print(oop)
-                                print(doop)
-                                print(geep)
                                 let myNewLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat as! CLLocationDegrees, lng as CLLocationDegrees)
                                 let anon = MKPointAnnotation()
                                 anon.coordinate = myNewLocation
                                 anon.title = title
                                 anon.subtitle = itemables
                                 self.map.addAnnotation(anon)
-
-                            
                             }
-                        print("_________")
-                        x = x + 1
+                            x = x + 1
                         }
                 }
-
-         
-
-            i = i + 1
+                i = i + 1
         }
-        
-
-            
-   
-        
-        
-    }
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        // Do any additional setup after loading the view.
-   
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    func locationManagerN(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let lastLocation: CLLocation = locations[locations.count - 1]
         
-   
+        var userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
+        var userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
         
+        var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
+        var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=\(String(format: "%.6f", lastLocation.coordinate.latitude))&location[longitude]=\(String(format: "%.6f", lastLocation.coordinate.longitude))"
+        let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
+        Alamofire.request(todoEndpoint, method: .get)
+            .responseJSON { response in
+                // handle JSON here
+                let json : NSDictionary? = response.result.value as! NSDictionary?
+                print("hey")
+                print(json)
+                if((json?.count)! >= 1){
+                    let content = UNMutableNotificationContent()
+                    content.title = "Hey do that thing"
+                    content.subtitle = "it was on your list"
+                    content.body = "do it"
+                    content.badge = 1
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+                    let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                }
+        }
     }
     
+}
 
     /*
     // MARK: - Navigation
@@ -126,5 +133,3 @@ class map: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
-}

@@ -15,18 +15,16 @@ import MapKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-   
-    
+    //MARK: ACTION
     @IBAction func afterlog(_sender: AnyObject){
         performSegue(withIdentifier: "afterlog", sender: self)
     }
     
-        
+    //MARK: OVERRIDE FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // map stuff
-        
+        // Map stuff
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
         })
         let loginButton = FBSDKLoginButton()
@@ -34,54 +32,16 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.frame = CGRect(x: 16, y: 500, width: view.frame.width - 32, height: 50)
         loginButton.delegate = self
     
-        
         // Set URL for endpoint
         let todoEndpoint: String = "http://remind-dbc.herokuapp.com/lists"
-        
-        /*
-        // Standard GET request and parsed JSON object can be manipulated after it comes back from server
-        Alamofire.request(todoEndpoint, method: .get)
-            .responseJSON { response in
-                // handle JSON here
-                guard let json = response.result.value as? [String: Any] else {
-                    print("Didn't get list object as JSON from API")
-                    print("Error: \(response.result.error)")
-                    return
-                }
-                print(json)
-        }
- 
-         */
-
-      
-            
-        
-    
     }
-
-
-
-
-//MARK: OUTLET
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: FUNCTIONS
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did log out of facebook")
     }
@@ -91,9 +51,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("Yakakaaaa")
             return
         }
-        
-        
-        
         if((FBSDKAccessToken.current()) != nil){
          let content = UNMutableNotificationContent()
         content.title = "User logged in"
@@ -103,62 +60,71 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
             let request = UNNotificationRequest(identifier: "auth", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-            
         }
         print(FBSDKAccessToken.current().userID)
         print("logged_in")
         afterlog(_sender: self)
-        
     }
-    
-  
-    
 }
 
-// POST request
+    // GET Request
 
-//        let newList: [String: Any] = ["name": "Test API List", "user_id" : 1]
-//        Alamofire.request(todoEndpoint, method: .post, parameters: ["list": newList], encoding: JSONEncoding.default)
-//            .responseJSON { response in
-//
-//            guard response.result.error == nil else {
-//                // got an error in getting the data, need to handle it
-//                print("error calling POST on /lists")
-//                print(response.result.error!)
-//                return
-//            }
-//            // make sure we got some JSON since that's what we expect
-//            guard let json = response.result.value as? [String: Any] else {
-//                print("didn't get list object as JSON from API")
-//                print("Error: \(response.result.error)")
-//                return
-//            }
-//            guard let listName = json["name"] as? String else {
-//                print("Could not get list name from JSON")
-//                return
-//            }
-//            print("The title is: " + listName)
-//        }
+    /*
+     // Standard GET request and parsed JSON object can be manipulated after it comes back from server
+     Alamofire.request(todoEndpoint, method: .get)
+     .responseJSON { response in
+     // handle JSON here
+     guard let json = response.result.value as? [String: Any] else {
+     print("Didn't get list object as JSON from API")
+     print("Error: \(response.result.error)")
+     return
+     }
+     print(json)
+     }
+     
+     */
 
+    // POST Request
 
+    //        let newList: [String: Any] = ["name": "Test API List", "user_id" : 1]
+    //        Alamofire.request(todoEndpoint, method: .post, parameters: ["list": newList], encoding: JSONEncoding.default)
+    //            .responseJSON { response in
+    //
+    //            guard response.result.error == nil else {
+    //                // got an error in getting the data, need to handle it
+    //                print("error calling POST on /lists")
+    //                print(response.result.error!)
+    //                return
+    //            }
+    //            // make sure we got some JSON since that's what we expect
+    //            guard let json = response.result.value as? [String: Any] else {
+    //                print("didn't get list object as JSON from API")
+    //                print("Error: \(response.result.error)")
+    //                return
+    //            }
+    //            guard let listName = json["name"] as? String else {
+    //                print("Could not get list name from JSON")
+    //                return
+    //            }
+    //            print("The title is: " + listName)
+    //        }
 
-//func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//    let lastLocation: CLLocation = locations[locations.count - 1]
-//    var userLatitude : String?
-//    var userLongitude : String?
-//    
-//    userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
-//    userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
-//    
-//    let userLocation: [String: Any] = ["location": ["latitude": userLatitude, "longitude": userLongitude]]
-//    Alamofire.request(locationEndpoint, method: .get, parameters: ["location": userLocation], encoding: JSONEncoding.default)
-//        .responseJSON { response in
-//            
-//            guard let json = response.result.value as? AnyObject else {
-//                print("Didn't get list object as JSON from API")
-//                print("Error: \(response.result.error)")
-//                return
-//            }
-//            print(json)
-//}
-
+    //func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    //    let lastLocation: CLLocation = locations[locations.count - 1]
+    //    var userLatitude : String?
+    //    var userLongitude : String?
+    //    
+    //    userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
+    //    userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
+    //    
+    //    let userLocation: [String: Any] = ["location": ["latitude": userLatitude, "longitude": userLongitude]]
+    //    Alamofire.request(locationEndpoint, method: .get, parameters: ["location": userLocation], encoding: JSONEncoding.default)
+    //        .responseJSON { response in
+    //            
+    //            guard let json = response.result.value as? AnyObject else {
+    //                print("Didn't get list object as JSON from API")
+    //                print("Error: \(response.result.error)")
+    //                return
+    //            }
+    //            print(json)
+    //}
