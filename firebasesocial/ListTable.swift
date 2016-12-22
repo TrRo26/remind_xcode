@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+var SendNotifications = true
 class ListTable: UITableViewController {
     
     //MARK: INSTANCE VARIABLES & CONSTANTS
@@ -28,6 +28,9 @@ class ListTable: UITableViewController {
     //MARK: OVERRIDE FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 23.0/255.0, green: 46.0/255.0, blue: 173.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         siteInfo()
         print(table)
     }

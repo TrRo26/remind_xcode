@@ -50,6 +50,10 @@ class map: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print(SendNotifications)
+        if SendNotifications == true{
+            doIT()
+        }
     }
 
     //MARK: FUNCTIONS
@@ -59,12 +63,10 @@ class map: UIViewController, CLLocationManagerDelegate {
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         self.currentLocation = myLocation
-        print(self.currentLocation)
         if gatekeeper == false {
             let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
             map.setRegion(region, animated: true)
             self.map.showsUserLocation = true
-            print(location.speed)
             print("this happens once andrew")
             self.gatekeeper = true
         }
@@ -78,6 +80,19 @@ class map: UIViewController, CLLocationManagerDelegate {
                     .responseJSON { response in
                         let json : NSDictionary? = response.result.value as! NSDictionary?
                         var a = json?["locations"] as! NSArray
+                        print(a)
+                        print(a.count > 0 && SendNotifications == true)
+                        print("tesst")
+                        if a.count > 0 && SendNotifications == true {
+                            let content = UNMutableNotificationContent()
+                            content.title = "Hey do that stuff"
+                            content.subtitle = "Check your map!!!"
+                            content.body = "do it"
+                            content.badge = 1
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+                            let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
+                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                        }
                         var x = 0
                         while x < a.count {
                         var b = a[x] as! NSDictionary
@@ -104,13 +119,13 @@ class map: UIViewController, CLLocationManagerDelegate {
                 i = i + 1
         }
     }
-    
-    func locationManagerN(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func doIT() -> Void{
+    func push_notification(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation: CLLocation = locations[locations.count - 1]
         
         var userLatitude = String(format: "%.6f", lastLocation.coordinate.latitude)
         var userLongitude = String(format: "%.6f", lastLocation.coordinate.longitude)
-        
+        print("geeeettssss here")
         var userLocation = ["location": ["latitude": userLatitude , "longitude": userLongitude]]
         var todoEndpoint = "https://remind-dbc.herokuapp.com/maps?location[latitude]=\(String(format: "%.6f", lastLocation.coordinate.latitude))&location[longitude]=\(String(format: "%.6f", lastLocation.coordinate.longitude))"
         let newList: [String: Any] = ["latitude": String(format: "%.6f", lastLocation.coordinate.latitude), "longitude" : String(format: "%.6f", lastLocation.coordinate.longitude)]
@@ -118,12 +133,12 @@ class map: UIViewController, CLLocationManagerDelegate {
             .responseJSON { response in
                 // handle JSON here
                 let json : NSDictionary? = response.result.value as! NSDictionary?
-                print("hey")
+                print("andrew it works")
                 print(json)
                 if((json?.count)! >= 1){
                     let content = UNMutableNotificationContent()
-                    content.title = "Hey do that thing"
-                    content.subtitle = "it was on your list"
+                    content.title = "Hey do that stuff"
+                    content.subtitle = "Check your map!!!"
                     content.body = "do it"
                     content.badge = 1
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
@@ -132,6 +147,10 @@ class map: UIViewController, CLLocationManagerDelegate {
                 }
         }
     }
+   
+    }
+    
+   
     
 }
 

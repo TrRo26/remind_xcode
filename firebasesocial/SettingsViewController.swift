@@ -18,6 +18,8 @@ class SettingsViewController: UIViewController {
     //MARK: ACTIONS
     @IBAction func pushSwitchAction(_ sender: UISwitch) {
         print(pushSwitch.isOn)
+        SendNotifications = pushSwitch.isOn
+        print(SendNotifications)
     }
     
     //MARK: OVERRIDE FUNCTIONS

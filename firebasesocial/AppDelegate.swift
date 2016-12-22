@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: INSTANCE VARIABLES & CONSTANTS
     var window: UIWindow?
+ 
 
     //MARK: FUNCTIONS
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
