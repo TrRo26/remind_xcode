@@ -79,29 +79,41 @@ class map: UIViewController, CLLocationManagerDelegate {
             print("this happens once andrew")
             self.gatekeeper = true
             
-            motionManager.accelerometerUpdateInterval = 1
-            motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
-                (data, error) in
-                self.outputAccelerationData(acceleration: (data?.acceleration)!)
-                if let speed = data {
-                    if speed.acceleration.x > 1 || speed.acceleration.x < 1 {
-                        let contento = UNMutableNotificationContent()
-                        contento.title = "Hey do that stuff andrew"
-                        contento.subtitle = "Check your map oooooo!!!"
-                        contento.body = "do it"
-                        contento.badge = 1
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-                        let request = UNNotificationRequest(identifier: "itema", content: contento, trigger: trigger)
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
-                    
-                    
-                    }
-                }
-            }
+//            motionManager.accelerometerUpdateInterval = 1
+//            motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
+//                (data, error) in
+//                self.outputAccelerationData(acceleration: (data?.acceleration)!)
+//                if let speed = data {
+//                    if speed.acceleration.x > 1 || speed.acceleration.x < 1 {
+//                        let contento = UNMutableNotificationContent()
+//                        contento.title = "Hey do that stuff andrew"
+//                        contento.subtitle = "Check your map oooooo!!!"
+//                        contento.body = "do it"
+//                        contento.badge = 1
+//                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+//                        let request = UNNotificationRequest(identifier: "itema", content: contento, trigger: trigger)
+//                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+//                    }
+//                }
+//            }
         }
-        while i < 1 {
-            print(i)
+        motionManager.accelerometerUpdateInterval = 1
+        motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
+            (data, error) in
+            self.outputAccelerationData(acceleration: (data?.acceleration)!)
+            if let speed = data {
+        while self.i < 1 && (speed.acceleration.x > 1 || speed.acceleration.x < -1){
+            
+            
+//                        let contento = UNMutableNotificationContent()
+//                        contento.title = "Hey do that stuff andrew"
+//                        contento.subtitle = "Check your map oooooo!!!"
+//                        contento.body = "do it"
+//                        contento.badge = 1
+//                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+//                        let request = UNNotificationRequest(identifier: "itema", content: contento, trigger: trigger)
+//                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+           
                 var currentLat = location.coordinate.latitude
                 var currentLon = location.coordinate.longitude
             
@@ -115,11 +127,11 @@ class map: UIViewController, CLLocationManagerDelegate {
                         print("tesst")
                         if a.count > 0 && SendNotifications == true {
                             let content = UNMutableNotificationContent()
-                            content.title = "Hey do that stuff"
+                            content.title = "Slightly different"
                             content.subtitle = "Check your map!!!"
                             content.body = "do it"
                             content.badge = 1
-                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
                             let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
                             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                         }
@@ -146,8 +158,11 @@ class map: UIViewController, CLLocationManagerDelegate {
                             x = x + 1
                         }
                 }
-                i = i + 1
-        }
+                   self.i = self.i + 1
+                    }
+                }
+            }
+        
     }
     func doIT() -> Void{
     func push_notification(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -171,7 +186,7 @@ class map: UIViewController, CLLocationManagerDelegate {
                     content.subtitle = "Check your map!!!"
                     content.body = "do it"
                     content.badge = 1
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
                     let request = UNNotificationRequest(identifier: "item", content: content, trigger: trigger)
                     UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                 }

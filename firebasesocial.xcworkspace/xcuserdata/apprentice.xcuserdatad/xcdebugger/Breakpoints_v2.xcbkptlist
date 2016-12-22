@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firebasesocial/map.swift"
-            timestampString = "504127296.301503"
+            timestampString = "504129632.935478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firebasesocial/map.swift"
-            timestampString = "504127296.301503"
+            timestampString = "504129632.935478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firebasesocial/map.swift"
-            timestampString = "504127296.301503"
+            timestampString = "504129632.935478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -73,12 +73,12 @@
                   symbolName = "firebasesocial.map.currentLocation.getter : __C.CLLocationCoordinate2D"
                   moduleName = "firebasesocial"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apprentice/Documents/firebasesocial/firebasesocial/Map.swift"
-                  timestampString = "504069284.35667"
+                  urlString = "file:///Users/apprentice/Desktop/firebasesocial/firebasesocial/Map.swift"
+                  timestampString = "504127532.373138"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
@@ -88,12 +88,12 @@
                   symbolName = "firebasesocial.map.currentLocation.setter : __C.CLLocationCoordinate2D"
                   moduleName = "firebasesocial"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apprentice/Documents/firebasesocial/firebasesocial/Map.swift"
-                  timestampString = "504069284.358933"
+                  urlString = "file:///Users/apprentice/Desktop/firebasesocial/firebasesocial/Map.swift"
+                  timestampString = "504127532.375221"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
                   offsetFromSymbolStart = "40">
                </Location>
                <Location
@@ -103,13 +103,13 @@
                   symbolName = "firebasesocial.map.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; firebasesocial.map"
                   moduleName = "firebasesocial"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apprentice/Documents/firebasesocial/firebasesocial/Map.swift"
-                  timestampString = "504069284.361199"
+                  urlString = "file:///Users/apprentice/Desktop/firebasesocial/firebasesocial/Map.swift"
+                  timestampString = "504127532.377146"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "216">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "208">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -118,13 +118,13 @@
                   symbolName = "firebasesocial.map.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;firebasesocial.map&gt;"
                   moduleName = "firebasesocial"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apprentice/Documents/firebasesocial/firebasesocial/Map.swift"
-                  timestampString = "504069284.363216"
+                  urlString = "file:///Users/apprentice/Desktop/firebasesocial/firebasesocial/Map.swift"
+                  timestampString = "504127532.379058"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "160">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "152">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firebasesocial/Map.swift"
-            timestampString = "504127296.301503"
+            timestampString = "504129632.935478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
             <Locations>
@@ -151,28 +151,28 @@
                   symbolName = "firebasesocial.map.locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()"
                   moduleName = "firebasesocial"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apprentice/Documents/firebasesocial/firebasesocial/Map.swift"
-                  timestampString = "504069284.368216"
+                  urlString = "file:///Users/apprentice/Desktop/firebasesocial/firebasesocial/Map.swift"
+                  timestampString = "504127533.584116"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "2236">
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "2340">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "firebasesocial.map.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(closure #1)"
+                  symbolName = "firebasesocial.map.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(closure #2)"
                   moduleName = "firebasesocial"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apprentice/Documents/firebasesocial/firebasesocial/Map.swift"
-                  timestampString = "504069284.370226"
+                  urlString = "file:///Users/apprentice/Desktop/firebasesocial/firebasesocial/Map.swift"
+                  timestampString = "504127533.587835"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "5192">
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "6796">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -239,6 +239,20 @@
             endingLineNumber = "17"
             landmarkName = "AppDelegate"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "firebasesocial/Map.swift"
+            timestampString = "504128967.867594"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
