@@ -13,12 +13,13 @@ import Alamofire
 import UserNotifications
 
 class map: UIViewController, CLLocationManagerDelegate {
-
+    
     //MARK: INSTANCE VARIABLES & CONSTANTS
     var i = 0
+    var gatekeeper = false
     let manager = CLLocationManager()
     var locationManager: CLLocationManager = CLLocationManager()
-    var currentLocation = CLLocation()
+    var currentLocation = CLLocationCoordinate2D() as CLLocationCoordinate2D
     
     //MARK: OUTLETS
     @IBOutlet weak var map: MKMapView!
@@ -26,15 +27,21 @@ class map: UIViewController, CLLocationManagerDelegate {
     //MARK: OVERRIDE FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        
+//        manager.delegate = self
+//        manager.desiredAccuracy = kCLLocationAccuracyBest
+//        manager.requestWhenInUseAuthorization()
+//        manager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        if gatekeeper == false {
+        print("cheeky")
         locationManager.startUpdatingLocation()
+        }
+//        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+//        let region:MKCoordinateRegion = MKCoordinateRegionMake(currentLocation, span)
+//        map.setRegion(region, animated: true)
+//        self.map.showsUserLocation = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,16 +54,20 @@ class map: UIViewController, CLLocationManagerDelegate {
 
     //MARK: FUNCTIONS
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
+        let location = locations[0] as CLLocation
         
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-        map.setRegion(region, animated: true)
-        self.map.showsUserLocation = true
-        currentLocation = location
-//        print(location.speed)
-
+        self.currentLocation = myLocation
+        print(self.currentLocation)
+        if gatekeeper == false {
+            let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+            map.setRegion(region, animated: true)
+            self.map.showsUserLocation = true
+            print(location.speed)
+            print("this happens once andrew")
+            self.gatekeeper = true
+        }
         while i < 1 {
             print(i)
                 var currentLat = location.coordinate.latitude
